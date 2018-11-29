@@ -1,0 +1,160 @@
+<html>
+<head>
+	 <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+	
+	<script>
+	function addheading()
+		{
+			var size = document.getElementById("size").value;
+			document.getElementById("main").innerHTML+="<h"+size+" contenteditable=true>Heading 1</h"+size+">";
+		}
+		
+		function addpara()
+		{
+			var c = document.getElementById("fcolor").value;
+			var s = document.getElementById("fsize").value;
+			var sp = document.getElementById("fspacing").value;
+			var lp = document.getElementById("lspacing").value;
+			var fw = document.getElementById("fweight").value;
+			var al = document.getElementById("align").value;
+			document.getElementById("main").innerHTML+="<div class='container' style='text-align:"+al+"'><p contenteditable=true><font color='"+c+"' size='"+s+"' style='letter-spacing:"+sp+";  line-height:"+lp+"; font-weight:"+fw+"; '>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</font></p></div>";
+		}
+	
+		function addruler()
+		{
+			document.getElementById("main").innerHTML+="<hr>";
+		}
+		
+		function clearcanvas()
+		{
+			console.log("clear");
+			document.getElementById("main").innerHTML="";
+			
+		}
+	</script>
+	
+	<style>
+	.main
+		{
+			
+			overflow-y: scroll;
+			background-color: #EEEEEE;
+			max-height: 720px;
+		}
+	</style>
+	</head>
+	
+	<body>
+	<div class="container-fluid">
+		<div class="row" style="height:720px">
+		<div class="col-sm-2" style="background-color:#DDDDDD">Sample templates</div>
+			
+			<div class="col-sm-7 main" id="main" style=""></div>
+			
+			<div class="col-sm-3" style="padding:10px; background-color:#DDDDDD" scroll="no">
+			Buttons
+				<br>
+				<br>
+				<button class="btn" onclick="addheading()">Add heading</button>
+					<select id="size">
+				<option value="1">1</option>
+				<option value="2">2</option>
+				<option value="3">3</option>
+				<option value="4">4</option>
+				<option value="5">5</option>
+				<option value="6">6</option>
+				</select>
+				
+				<br>
+				<br>
+				<button class="btn" onclick="addpara()">Add paragraph</button>
+								
+				<br>
+				<br>
+				<button class="btn" onclick="addruler()">Add Horizontal ruler</button>
+				
+				<br>
+				<br>
+				<button class="btn" onclick="clearcanvas()">Clear canvas</button>
+				
+				<hr>
+				Font controls
+				
+				<br>
+				<br>
+				<button class="btn">Font size</button>
+				<select id="fsize">
+				<option value="1">18</option>
+				<option value="2">20</option>
+				<option value="3">22</option>
+				<option value="4">24</option>
+				<option value="5">26</option>
+				<option value="6">32</option>
+				</select>
+				
+				<br>
+				<br>
+				<button class="btn">Text align</button>
+				<select id="align">
+				<option value="left">Left</option>
+				<option value="right">Right</option>
+				<option value="center">Center</option>
+				</select>
+				
+				<br>
+				<br>
+				<button class="btn">Font color</button>
+				<input type="color" id="fcolor">
+				
+				
+				<br>
+				<br>
+				<button class="btn">Letter Spacing</button>
+				<select id="fspacing">
+				<option value="2">2</option>
+				<option value="3">3</option>
+				<option value="4">4</option>
+				<option value="5">5</option>
+				<option value="6">6</option>
+				<option value="7">7</option>
+				</select>
+				
+				<br>
+				<br>
+				<button class="btn">Line height</button>
+				<select id="lspacing">
+				<option value="2">2</option>
+				<option value="3">3</option>
+				<option value="4">4</option>
+				<option value="5">5</option>
+				<option value="6">6</option>
+				<option value="7">7</option>
+				</select>
+				
+				<br>
+				<br>
+				<button class="btn">Font Weight</button>
+				<select id="fweight">
+				<option value="100">100</option>
+				<option value="200">200</option>
+				<option value="300">300</option>
+				<option value="400">400</option>
+				<option value="500">500</option>
+				<option value="600">600</option>
+				<option value="700">700</option>
+				</select>
+				
+				
+			</div>
+		
+		</div>
+		
+		</div>
+	
+	</body>
+</html>
